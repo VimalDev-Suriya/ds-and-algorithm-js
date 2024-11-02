@@ -1,0 +1,21 @@
+const pattern1 = require('./pattern1');
+const pattern10 = require('./pattern10');
+const pattern2 = require('./pattern2');
+const pattern3 = require('./pattern3');
+const pattern4 = require('./pattern4');
+const pattern5 = require('./pattern5');
+const pattern6 = require('./pattern6');
+const pattern7 = require('./pattern7');
+const pattern8 = require('./pattern8');
+const pattern9 = require('./pattern9');
+
+pattern1(5);
+pattern2(5);
+pattern3(5);
+pattern4(5);
+pattern5(5);
+pattern6(5);
+pattern7(5);
+pattern8(5);
+pattern9(5);
+pattern10(5);

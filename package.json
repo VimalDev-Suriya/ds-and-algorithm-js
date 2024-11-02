@@ -4,7 +4,8 @@
   "description": "Data structures and algorithm using Javascript",
   "main": "index.js",
   "scripts": {
-    "array": "nodemon src/arrays/index.js"
+    "array": "nodemon src/arrays/index.js",
+    "patterns": "nodemon src/patterns/index.js"
   },
   "keywords": [],
   "author": "",
