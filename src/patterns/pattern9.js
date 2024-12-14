@@ -19,9 +19,9 @@ const pattern9 = (n) => {
         Math.ceil(maxColumn / 2) - i < j &&
         j < Math.ceil(maxColumn / 2) + i
       ) {
-        row += ` `;
+        row += '  ';
       } else {
-        row += '*';
+        row += '* ';
       }
     }
     console.log(row);

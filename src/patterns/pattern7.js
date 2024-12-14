@@ -1,5 +1,10 @@
 /*
 Mirror image of pattern2 
+        * 
+      * *
+    * * *
+  * * * *
+* * * * *
  */
 
 const pattern7 = (n) => {

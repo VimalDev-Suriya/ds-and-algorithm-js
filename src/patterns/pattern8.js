@@ -7,17 +7,15 @@
  */
 const pattern8 = (n) => {
   let row = '';
-  let maxColumn = n * 2 - 1;
+  const maxColumn = n * 2 - 1;
+  const range = Math.ceil(maxColumn / 2);
 
   for (let i = 1; i <= n; i++) {
     for (let j = 1; j <= maxColumn; j++) {
-      if (
-        Math.ceil(maxColumn / 2) - i < j &&
-        j < Math.ceil(maxColumn / 2) + i
-      ) {
-        row += `*`;
+      if (range - i < j && j < range + i) {
+        row += `* `;
       } else {
-        row += ' ';
+        row += '  ';
       }
     }
     console.log(row);
@@ -31,7 +29,7 @@ const pattern8 = (n) => {
  * i =row j =[space, star, space]
  * i = 0 :: j = [4, 1, 4] = 9
  * i = 1 :: j = [3, 3, 3] = 9
- * i = 2 :: j = [2, 5, 1] = 9
+ * i = 2 :: j = [2, 5, 2] = 9
  * i = 3 :: j = [1, 7, 1] = 9
  * i = 4 :: j = [0, 9, 0] = 9
  * i iterate till n
