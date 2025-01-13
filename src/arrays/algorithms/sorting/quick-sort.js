@@ -26,14 +26,13 @@ const quick_sort_asc = (arr = []) => {
   }
 
   // * considering the last element as the pivot
-  //   const pivot = arr[arr.length - 1];
+  const pivot = arr[arr.length - 1];
 
   // * considering the first element as the pivot
-  const pivot = arr[0];
+  // const pivot = arr[0];
 
-  let left = [];
-  let right = [];
-  let middle = [pivot];
+  const left = [];
+  const right = [];
 
   // * Partision
   for (let i = 0; i < arr.length; i++) {
@@ -41,8 +40,6 @@ const quick_sort_asc = (arr = []) => {
       left.push(arr[i]);
     } else if (arr[i] > pivot) {
       right.push(arr[i]);
-    } else {
-      middle.push(arr[i]);
     }
   }
 

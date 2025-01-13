@@ -28,7 +28,7 @@ const insertion_sort_asc = (arr = []) => {
   // * Since we are considring the first elemnt as sorted - so loop starts from 1 to n-1
   for (let i = 1; i < len; i++) {
     temp = arr[i];
-    j = i - 1;
+    j = i - 1; // * sorted array index.
 
     // * to loop the sorted array
     while (j >= 0 && temp < arr[j]) {

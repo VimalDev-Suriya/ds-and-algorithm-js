@@ -34,7 +34,7 @@ const bubble_sort_asc = (arr = []) => {
   for (let i = 0; i < pass; i++) {
     flag = 0;
     // * the j is limited to i & arr_length because we know sorted elements is directly proportional to passes,
-    // which means fir each passes the corresponding elemnt will be sorted eg for 1st passs the last element willbe sorted, for 2nd pass the last 2 element will be sorted
+    // which means for each passes the corresponding elemnt will be sorted eg for 1st passs the last element willbe sorted, for 2nd pass the last 2 element will be sorted
     for (let j = 0; j < arr_length - i; j++) {
       // * below condition determins whether the code is ascending or decending.
       if (arr[j] > arr[j + 1]) {

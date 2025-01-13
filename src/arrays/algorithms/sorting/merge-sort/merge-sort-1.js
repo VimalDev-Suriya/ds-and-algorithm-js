@@ -25,7 +25,7 @@ const mergeSort = (arr = []) => {
 
   const middle = Math.floor(arr.length / 2);
   // * Partisiong the array into left and right
-  //  * slice will not change the original array returns the new moified array
+  //  * slice will not change the original array returns the new modified array
   const leftArray = arr.slice(0, middle);
   const rightArray = arr.slice(middle);
 

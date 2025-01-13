@@ -1,6 +1,6 @@
 const { MyCustomArray } = require('./array-ds-creation');
 const maxSumSubarray = require('./algorithms/2-pointers(Sliding-window)/constant-window');
-const reverse_array = require('./reverse-array');
+const reverse_array = require('./problems/easy/reverse-array');
 const { bubble_sort_asc } = require('./algorithms/sorting/bubble-sort');
 const { insertion_sort_asc } = require('./algorithms/sorting/insertion-sort');
 const { selection_sort_asc } = require('./algorithms/sorting/selection-sort');
@@ -12,8 +12,26 @@ const {
   minValueInArray_1,
   minValueInArray_2,
   minValueInArray_3,
-} = require('./min-val-in-array');
+} = require('./problems/easy/min-val-in-array');
 const { mergeSort } = require('./algorithms/sorting/merge-sort/merge-sort-1');
+const { maxValueinArray } = require('./problems/easy/max-val-in-array');
+const {
+  secondLargestElementInArr,
+} = require('./problems/easy/second-largest-element');
+const { rotateArray } = require('./problems/easy/rotate-array');
+const { removeDuplicates } = require('./problems/easy/remove-duplicates');
+const { moveAllZeros } = require('./problems/easy/move-all-zero');
+const { unionOfSortedArray } = require('./problems/easy/union-of-sorted-array');
+const {
+  intersectionOfSortedArray,
+} = require('./problems/easy/intersection-sorted-arr');
+const { findMissingNumber } = require('./problems/easy/find-missing-num');
+const {
+  maximumConsecutiveOnes,
+} = require('./problems/easy/maxium-consecutiveone');
+const {
+  sumeOfPositiveSubarray,
+} = require('./problems/medium/possitve-k-subarray');
 
 /*
     A Custom creation of Array DS using the JS Objects.
@@ -64,8 +82,8 @@ console.log(
   selection_sort_asc([7, 4, 10, 8, 3, 1])
 );
 console.log(
-  'Quick Sort | Sorted Array in Ascending: [7, 4, 10, 8, 3, 1] -> ',
-  quick_sort_asc([7, 4, 10, 8, 3, 1])
+  'Quick Sort | Sorted Array in Ascending: [7, 4, 10, 9, 8, 3, 1] -> ',
+  quick_sort_asc([7, 4, 10, 9, 8, 3, 1])
 );
 console.log(
   'Merge Sort | Sorted Array in Ascending: [7, 4, 10, 8, 3, 1] -> ',
@@ -78,4 +96,45 @@ console.log(
 console.log(
   'Merge Sort | Sorted Array in Ascending: [7, 4, 10, 8, 3, 1] -> ',
   mergeSort([7, 4, 10, 8, 3, 1])
+);
+console.log(
+  'Maximum value [15, 16, 3, 8, 5] is => ',
+  maxValueinArray([15, 16, 3, 8, 5])
+);
+console.log(
+  'Second largest value [7, 4, 10, 8, 3, 1] is => ',
+  secondLargestElementInArr([7, 4, 10, 8, 3, 1])
+);
+console.log(
+  'Second largest value [1, 1, 1, 1] is => ',
+  secondLargestElementInArr([1, 1, 1, 1])
+);
+console.log(
+  'Rotate the array [1, 2, 3, 4, 5, 6, 7], 3 times and the result is =>',
+  rotateArray([1, 2, 3, 4, 5, 6, 7], 3)
+);
+console.log(
+  'Remove the duplicates from sorted [1, 1, 2, 2, 3, 3] => ',
+  removeDuplicates([1, 1, 2, 2, 3, 3])
+);
+console.log(
+  'Move all the Zeros [1, 0, 2, 0, 3, 0, 0, 4, 0] => ',
+  moveAllZeros([1, 0, 2, 0, 3, 0, 0, 4, 0])
+);
+console.log(
+  'Union of 2 sorted arrays [1, 1, 3, 3, 6], [2, 5, 5, 8] => ',
+  unionOfSortedArray([1, 1, 3, 3, 6], [2, 5, 5, 8])
+);
+console.log(
+  'Intersection of 2 sorted array =>',
+  intersectionOfSortedArray([1, 2, 3, 4, 5], [3, 4, 5, 6, 7])
+);
+console.log('Find the missing number =>', findMissingNumber([1, 2, 4, 5], 5));
+console.log(
+  'Maxium consecutive ones in athe array =>',
+  maximumConsecutiveOnes([1, 1, 0, 0, 1, 1, 1, 0, 1, 0, 1, 1, 1, 1])
+);
+console.log(
+  'Maxium Subarray [1, 2, 3, 1, 1, 1, 1, 4, 2, 3] with K=3=>',
+  sumeOfPositiveSubarray([1, 2, 3, 1, 1, 1, 1, 4, 2, 3], 3)
 );

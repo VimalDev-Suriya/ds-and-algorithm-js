@@ -45,9 +45,9 @@ const merge_sort = (arr, low, high) => {
   let mid = Math.floor((low + high) / 2);
 
   // * First half
-  merge_sort(arr, low, mid); // it is actually heps to find the sub arrays
+  merge_sort(arr, low, mid); // it is actually helps to find the sub arrays
   // * Second half
-  merge_sort(arr, mid + 1, high); // it is actually heps to find the sub arrays
+  merge_sort(arr, mid + 1, high); // it is actually helps to find the sub arrays
 
   return merge(arr, low, mid, high);
 };
