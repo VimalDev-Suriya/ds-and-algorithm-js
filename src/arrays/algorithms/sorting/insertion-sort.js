@@ -21,6 +21,7 @@
  * Space complexity - O(1) - though we are going to use temp, it will alyes be 1 varaibles
  * Time Complexity - O(n^2) - considering the worst case scenario.
  */
+// [15, 16, 6, 8, 5]
 const insertion_sort_asc = (arr = []) => {
   let temp;
   const len = arr.length;
@@ -35,6 +36,7 @@ const insertion_sort_asc = (arr = []) => {
       // * Shifting the element to 1 step right
       arr[j + 1] = arr[j];
       j--;
+      l;
     }
 
     arr[j + 1] = temp;

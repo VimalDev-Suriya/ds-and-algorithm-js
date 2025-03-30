@@ -70,7 +70,7 @@
  * Algorithm (View my notes for visual flow)
  *
  * 1. Using 2 pointers
- * 2. Initialize 2 pointer i and j at the same position (first element) 0. and considering teh first elemnt to be the sum.
+ * 2. Initialize 2 pointer i and j at the same position (first element) 0. and considering the first element to be the sum.
  * 3. if the sum of elements in the subarray from i -> j is less than k, the increase the j
  * 4. If sum and k is equal the find the masLength & increase the j
  *      * update the maxlength of the subarray and update the sum by removing the last element.

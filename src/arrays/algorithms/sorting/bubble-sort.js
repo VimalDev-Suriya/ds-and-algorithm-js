@@ -24,6 +24,19 @@
  * pass 1 => [15, 6, 8, 5, 16]; Here the 16 is the largest element.
  * pass 2 => [6, 8, 5, 15, 16]; Here the 15 is the Second largest element.
  * Final pass will have the final soted array
+ * 
+ * PSEUDO CODE
+ * 
+ * BubbleSort(arr):
+    n = length of arr
+    for i = 0 to n-1:
+        swapped = false
+        for j = 0 to n-i-2:
+            if arr[j] > arr[j+1]:
+                swap(arr[j], arr[j+1])
+                swapped = true
+        if not swapped:
+            break  // Array is already sorted, exit early
  */
 
 const bubble_sort_asc = (arr = []) => {
