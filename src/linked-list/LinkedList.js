@@ -74,6 +74,39 @@ class LinkedList {
       temp = temp.next;
     }
   }
+
+  deleteNodeinKthPosition(position) {
+    if (this.head === null) {
+      return this.head;
+    }
+
+    if (position === 1) {
+      if (this.head.next === null) {
+        this.head = null;
+
+        return this.head;
+      }
+
+      this.head = this.head.next;
+      return this.head;
+    }
+
+    let counter = 0;
+    let prev = null;
+    let temp = this.head;
+
+    while (temp !== null) {
+      counter++;
+
+      if (counter === position) {
+        prev.next = temp.next;
+        break;
+      }
+
+      prev = temp;
+      temp = temp.next;
+    }
+  }
 }
 
 module.exports = {

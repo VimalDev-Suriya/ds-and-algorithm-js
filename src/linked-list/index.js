@@ -12,3 +12,6 @@ node.printLL();
 
 node.insertElementInKthPosition(10, 4);
 node.printLL();
+
+node.deleteNodeinKthPosition(1);
+node.printLL();
