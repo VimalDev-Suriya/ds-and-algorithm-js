@@ -34,6 +34,7 @@ const {
 } = require('./problems/medium/possitve-k-subarray');
 const { sumOfTwoNumbers } = require('./problems/medium/2-sum');
 const { sort0s1s2sInArray } = require('./problems/medium/sort-0s-1s-2s');
+const same = require('./algorithms/frequency-counter');
 
 /*
     A Custom creation of Array DS using the JS Objects.
@@ -75,10 +76,10 @@ const { sort0s1s2sInArray } = require('./problems/medium/sort-0s-1s-2s');
 //   'Bubble Sort | Sorted Array in Ascending: [15, 16, 6, 8, 5] -> ',
 //   bubble_sort_asc([15, 16, 6, 8, 5])
 // );
-console.log(
-  'Inseration Sort | Sorted Array in Ascending: [15, 16, 6, 8, 5] -> ',
-  insertion_sort_asc([15, 16, 6, 8, 5])
-);
+// console.log(
+//   'Inseration Sort | Sorted Array in Ascending: [15, 16, 6, 8, 5] -> ',
+//   insertion_sort_asc([15, 16, 6, 8, 5])
+// );
 // console.log(
 //   'Selection Sort | Sorted Array in Ascending: [7, 4, 10, 8, 3, 1] -> ',
 //   selection_sort_asc([7, 4, 10, 8, 3, 1])
@@ -148,3 +149,10 @@ console.log(
 //   '[2,0,2,1,1,0], sort these arrays =>',
 //   sort0s1s2sInArray([2, 0, 2, 1, 1, 0])
 // );
+
+console.log(same([1,2,3], [1,4,9]));
+console.log(same([1,2,1], [1,4,1]));
+console.log(same([1,2], [1,4,9]));
+console.log(same([1,2,1], [1,4,4]));
+console.log(same([1,2,3], [1,4,4]));
+console.log(same([1,2,6], [36,4,1]));

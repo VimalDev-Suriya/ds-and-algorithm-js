@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "arrays": "nodemon src/arrays/index.js",
+    "strings": "nodemon src/strings/index.js",
     "patterns": "nodemon src/patterns/index.js",
     "revise": "nodemon src/revise.js",
     "recursion": "nodemon src/recursion/index.js",
