@@ -9,7 +9,8 @@
     "patterns": "nodemon src/patterns/index.js",
     "revise": "nodemon src/revise.js",
     "recursion": "nodemon src/recursion/index.js",
-    "linkedlist": "nodemon src/linked-list/index.js"
+    "linkedlist": "nodemon src/linked-list/index.js",
+    "stack": "nodemon src/stack/index.js"
   },
   "keywords": [],
   "author": "",
