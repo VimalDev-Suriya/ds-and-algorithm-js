@@ -35,6 +35,7 @@ const {
 const { sumOfTwoNumbers } = require('./problems/medium/2-sum');
 const { sort0s1s2sInArray } = require('./problems/medium/sort-0s-1s-2s');
 const same = require('./algorithms/frequency-counter');
+const countUniqueValue = require('./algorithms/2-pointers(Sliding-window)/count-unique-values');
 
 /*
     A Custom creation of Array DS using the JS Objects.
@@ -150,9 +151,14 @@ const same = require('./algorithms/frequency-counter');
 //   sort0s1s2sInArray([2, 0, 2, 1, 1, 0])
 // );
 
-console.log(same([1,2,3], [1,4,9]));
-console.log(same([1,2,1], [1,4,1]));
-console.log(same([1,2], [1,4,9]));
-console.log(same([1,2,1], [1,4,4]));
-console.log(same([1,2,3], [1,4,4]));
-console.log(same([1,2,6], [36,4,1]));
+// console.log(same([1,2,3], [1,4,9]));
+// console.log(same([1,2,1], [1,4,1]));
+// console.log(same([1,2], [1,4,9]));
+// console.log(same([1,2,1], [1,4,4]));
+// console.log(same([1,2,3], [1,4,4]));
+// console.log(same([1,2,6], [36,4,1]));
+
+console.log(countUniqueValue([1, 1, 1, 2]));
+console.log(countUniqueValue([1, 2]));
+console.log(countUniqueValue([1, 1]));
+console.log(countUniqueValue([1, 2, 3]));
