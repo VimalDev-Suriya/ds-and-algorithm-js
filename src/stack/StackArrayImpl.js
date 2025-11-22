@@ -17,7 +17,7 @@
 class StackUsingArray {
   constructor() {
     // the pointer that always points the newly added element (~the length of the array)
-    this.top = 0;
+    this.top = 0; // its nothing but the lenght, just for naming conventions we are using as top.
 
     // * Using the Array as the base DS to constuct the Stack
     this.stk = [];
@@ -36,7 +36,7 @@ class StackUsingArray {
   pop() {
     this.top--;
 
-    // * If we need to remove the specific last or First index we can alter the length of the array
+    // * If we need to remove the Last or First index we can alter the length of the array
     this.stk.length = this.top;
   }
 
