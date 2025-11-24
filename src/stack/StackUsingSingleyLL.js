@@ -18,7 +18,7 @@ class StackSinglyLinkedList{
     }
 
     // * Though the name is push, but we are going to add the data at Start of LL, because while doing the pop if we want to pop the last data we should be navifating from the first, that takes O(n).
-    // This will not applicable for the Doubly Linked list
+    // This will not applicable for the Doubly Linked list, because we have tail from where we can pop out
     push(data){
         const newNode = new Node(data);
 

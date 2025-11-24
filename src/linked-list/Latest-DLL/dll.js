@@ -39,8 +39,9 @@ class DoubllyLinkedList{
         }
 
         // * Since DLL have both prev & next pointer in the single node, its easy to push & pop
+        // * we can directly take the last element and pop it out
         let oldTail = this.tail;
-        let newTail = oldTail.prev; 
+        let newTail = oldTail.prev;
 
         newTail.next = null;
         oldTail.prev = null;
@@ -48,6 +49,8 @@ class DoubllyLinkedList{
         this.tail = newTail;
 
         this.length--;
+
+        // * Consider a scenario where DLL has already have 2 element, afetr removing, it will have only one so assigning the tail & head as same.  
         if(this.length === 1){
             this.tail = this.head;
         }

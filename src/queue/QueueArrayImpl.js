@@ -4,7 +4,7 @@
  * Queue follows the `FIRST IN FIRST OUT` principle
  * 
  * The Big O will always be O(1) & O(n) -> Based on the way we use to enqueue & dequeus
- * So using arrays to implement the queue is not the nest practice, so always use the linked list
+ * So using arrays to implement the queue is not the best practice, so always use the linked list to implement Queue.
  *
  * @example
  * initial arr = []
