@@ -27,7 +27,7 @@ class BinarySearchTree{
         let currentNode = this.root;
 
         // * here while loop is just for looping, the condition we pass doesnot have any impact.
-        // * the loop was controlled by the break * continure we used.
+        // * the loop was controlled by the break & continue we used.
         while(currentNode){
             // * we can update the below equality logic, as considering a new property in the node as frequency, based on the repetition of data we can increase the frequncy. 
             if(data === currentNode.value) return "already existed";
