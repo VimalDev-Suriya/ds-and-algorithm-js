@@ -1,5 +1,5 @@
 // * I am using the Adjaceny list to store the graph.
-// * No error hanlding was done
+// * No error hanlding was done (TODO)
 // * we are implementing the undirected graph
 class Graph{
     constructor(){
@@ -13,6 +13,7 @@ class Graph{
     }
 
     addEdge(vertex1, vertex2){
+        // Since this is the un-directed graph, pushing the vertex into each of the neighbor arrays.
         this.adjacencyList[vertex1].push(vertex2);
 
         this.adjacencyList[vertex2].push(vertex1);
@@ -84,6 +85,28 @@ class Graph{
 
         return results
     }
+
+    bfs(startVertex){
+        const queue = [startVertex]; //* using array here (Better use LL)
+        const visitedvertex = {};
+        const result = [];
+
+        visitedvertex[startVertex] = true;
+
+        while(queue.length){
+            let currentVertex = queue.shift(); // O(n) ops
+            result.push(currentVertex);
+            
+            this.adjacencyList[currentVertex].forEach(neighbor => {
+                if(!visitedvertex[neighbor]) {
+                    visitedvertex[neighbor] = true;
+                    queue.push(neighbor)
+                }
+            })
+        }
+
+        return result;
+    }
 }
 
 const g1 = new Graph();
@@ -104,7 +127,8 @@ g1.addEdge("D", "F")
 g1.addEdge("E", "F");
 
 console.log('recursive DFS', g1.dfs_recursive('A'))
-console.log('recursive DFS', g1.dfs_iterative('A'))
+console.log('iteratic DFS', g1.dfs_iterative('A'))
+console.log('BFS', g1.bfs('A'))
 
 //     A
 //   /   \

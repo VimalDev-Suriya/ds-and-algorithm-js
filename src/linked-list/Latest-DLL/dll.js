@@ -151,16 +151,43 @@ class DoubllyLinkedList{
         this.length++;
         return newNode;
     }
+
+    reverse(){
+        let currentNode = this.head;
+        
+        // * swapping the head and tail.
+        this.head = this.tail;
+        this.tail = currentNode;
+
+        // 3 pointers
+        // prev, current, next.
+        let prevNode = null;
+        let nextNode;
+        
+        while(currentNode){
+            nextNode = currentNode.next; 
+    
+            currentNode.prev = nextNode;
+            currentNode.next = prevNode;
+
+            prevNode = currentNode;
+
+            currentNode = nextNode;
+        }
+
+    }
 }
 
 const dll = new DoubllyLinkedList();
 
-dll.push(1).push(2);
+dll.push(1).push(2).push(3);
 // console.log(dll);
 // dll.pop();
 // dll.shift()
 // dll.unshift(0);
 // dll.set(0, 'test')
-dll.insert(1, 'test')
+// dll.insert(1, 'test')
 console.log(dll);
+dll.reverse();
+console.log(dll)
 

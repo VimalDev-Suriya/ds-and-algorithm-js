@@ -9,7 +9,7 @@ class Node {
 class SinglyLinkedList {
     constructor(){
         this.head = null;
-        // Tail to track the last element in the LL.
+        // Tail to track the last element in the LL. (We will highly use this only in DLL)
         this.tail = null
         this.length = 0;
     }
@@ -247,7 +247,7 @@ class SinglyLinkedList {
         let prevNode = null; // * this will be the next for the reversed LL
         let nextNode; // * this is the next of the original LL.
 
-        // * looping through the LL till the cuurentNode becomes null, i.e last node.
+        // * looping through the LL till the curentNode becomes null, i.e last node.
         while(currentNode){
             // Moving the next node of the current node in nextNode variable.
             // * here we are simply storing the currentNode's reference to the nextNode, so that we can moveon through the LL, even after tampering the next value of current node.
@@ -286,5 +286,5 @@ sl1.push('!');
 // console.log('ll', JSON.stringify(sl1));
 // sl1.insert(0, 'dude')
 // sl1.remove(0);
-sl1.reverseL();
+sl1.reverse();
 console.log('ll', JSON.stringify(sl1));
