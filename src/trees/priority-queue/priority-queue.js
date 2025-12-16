@@ -24,6 +24,7 @@ class PriorityQueue {
         let currentElementParentIdx = Math.floor((currentElementIdx - 1) / 2);
 
         // Iterating to determine if the parent is less priority than the data
+        // math.floor(-1/2) return -1 (to restrict this I added the gurad to have parentindex greater than & equal to 0)
         while(currentElementParentIdx >= 0 && currentElementParentIdx < this.values.length && this.values[currentElementParentIdx].priority > node.priority){
             // Swap
             [this.values[currentElementIdx], this.values[currentElementParentIdx]] = [this.values[currentElementParentIdx], this.values[currentElementIdx]]
