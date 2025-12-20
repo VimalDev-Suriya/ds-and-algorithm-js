@@ -5,6 +5,15 @@ class Node {
     }
 }
 
+/**
+ * Big O Notation
+ * 
+ * push O(1)
+ * pop O(n)
+ * shift O(1)
+ * unshift O(1)
+ */
+
 // https://visualgo.net/en/list?slide=1
 class SinglyLinkedList {
     constructor(){

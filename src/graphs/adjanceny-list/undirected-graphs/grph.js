@@ -86,6 +86,7 @@ class Graph{
         return results
     }
 
+    // * completing all the adjacents, instead of the depth.
     bfs(startVertex){
         const queue = [startVertex]; //* using array here (Better use LL)
         const visitedvertex = {};
