@@ -23,7 +23,7 @@ class SinglyLinkedList {
         this.length = 0;
     }
 
-    // * Push should not iterate over the loop, the big ) should be O(1)
+    // * Push should not iterate over the loop, the big O should be O(1)
     push(data) {
         // * Create a new node with the data;
         const newNode = new Node(data);
