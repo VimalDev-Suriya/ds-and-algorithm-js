@@ -1,5 +1,5 @@
 /**
- * 
+ * WORKS WELL IN NON SORTED ARRAY ALSO.
  * @param {Array} arr1 The First array
  * @param {Array} arr2 The Second Array
  * @returns {Array} A new array, which contains the unique values of both of the elements
