@@ -19,6 +19,7 @@ const findMissingNumber = (arr) => {
   let xorArray = 0;
 
   // * loop runs till the last element, since we know the array will always have n natural numbers
+  // * This condition works, if there is no missing number e.g for the input [1, 2, 3]
   for (let i = 0; i < arr[arr.length - 1]; i++) {
     xorArray ^= arr[i];
     xorNaturalNumbers ^= i + 1; // xor of the n natural numbers
