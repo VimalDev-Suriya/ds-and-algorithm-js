@@ -1,7 +1,7 @@
 // * This solution works only in Sorted array
 const union = (arr1 = [], arr2 = []) => {
   let i = 0;
-  j = 0;
+  let j = 0;
 
   const result = []; // SP-C = O(n + m)
 
