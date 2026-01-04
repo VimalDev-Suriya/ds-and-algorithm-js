@@ -35,7 +35,7 @@ const longestSubarrayWithKSum = (arr = [], k) => {
     }
 
     if (sum === k) {
-      maxLength = Math.max(right - left + 1, maxLength);
+      maxLength = Math.max(right - left + 1, maxLength); // * Added 1 here, since the array starts with 0, but we should return the length
     }
   }
 
