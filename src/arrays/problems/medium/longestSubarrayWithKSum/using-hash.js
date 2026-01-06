@@ -19,20 +19,21 @@ const longestSubarrayWithKSum = (arr = [], k) => {
   let prefixSum = 0;
   let maxLength = 0;
 
-  // Important: handles subarray starting at index 0
-  prefixMap.set(0, -1);
-
   for (let i = 0; i < arr.length; i++) {
     prefixSum += arr[i];
 
-    // Check if there exists a prefixSum - k
-    if (prefixMap.has(prefixSum - k)) {
-      const prevIndex = prefixMap.get(prefixSum - k);
-      maxLength = Math.max(maxLength, i - prevIndex);
+    if (prefixSum === k) {
+      maxLength = Math.max(maxLength, i + 1); // * i + 1 is due to zero based indexing
     }
 
-    // Store earliest occurrence only
-    if (!prefixMap.has(prefixSum)) {
+    const rem = prefixSum - k;
+
+    if (prefixMap.has(rem)) {
+      const idx = i - prefixMap.get(rem);
+      maxLength = Math.max(maxLength, idx);
+    }
+
+    if (!prefixMap.has(rem)) {
       prefixMap.set(prefixSum, i);
     }
   }
@@ -42,4 +43,4 @@ const longestSubarrayWithKSum = (arr = [], k) => {
 
 console.log(longestSubarrayWithKSum([1, 2, 3, 1, 1, 1, 1, 4, 2, 3], 3)); // length = 3
 console.log(longestSubarrayWithKSum([3, 4, 2, 3, 2, 4, 2], 12)); // length = 4
-console.log(longestSubarrayWithKSum([0, 0, 0, 3, 0, 0], 3)); // length = 4
+console.log(longestSubarrayWithKSum([0, 0, 0, 3, 0, 0], 3)); // length = 6

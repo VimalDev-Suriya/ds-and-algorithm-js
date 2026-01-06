@@ -28,7 +28,9 @@ const longestSubarrayWithKSum = (arr = [], k) => {
         max = Math.max(counter, max);
       }
 
-      if (sum > k) break; // to prevent unwanted looping
+      // [this is correct here , because we know the loop goes like] [1(i), 2(j)], [1(i), 2{j}, 3(j)...]
+      // * this will not work if the numbers has 0.
+      if (sum > k) break; // to prevent unwanted looping 
     }
   }
 
