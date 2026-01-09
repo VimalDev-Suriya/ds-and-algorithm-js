@@ -1,40 +1,40 @@
-class Node{
-    constructor({value, priority}){
+class Node {
+    constructor({ value, priority }) {
         this.value = value;
         this.priority = priority;
     }
 }
 
-class PriorityQueue{
-    constructor(){
+class PriorityQueue {
+    constructor() {
         this.values = [];
     }
 
-    enqueue(data){
+    enqueue(data) {
         this.values.push(data);
 
-        if(this.values.length === 1) return;
+        if (this.values.length === 1) return;
 
         // * bubbling up the data.
         let currentElementIdx = this.values.length - 1;
         let currentElementValue = this.values[currentElementIdx];
-        let currentElementParentIdx = Math.floor((currentElementIdx - 1 ) / 2);
+        let currentElementParentIdx = Math.floor((currentElementIdx - 1) / 2);
 
         // logic
         // if parent is greater than child , i need to swap
         // For current Element => idx will change - value wont change
         // For parent => both idx & value will change
-        while(currentElementParentIdx >= 0 && currentElementValue.priority < this.values[currentElementParentIdx].priority){
+        while (currentElementParentIdx >= 0 && currentElementValue.priority < this.values[currentElementParentIdx].priority) {
             [this.values[currentElementParentIdx], this.values[currentElementIdx]] = [this.values[currentElementIdx], this.values[currentElementParentIdx]];
             currentElementIdx = currentElementParentIdx;
-            currentElementParentIdx = Math.floor((currentElementIdx - 1 ) / 2); // math.floor(-1/2) return -1 (to restrict this I added the gurad to have parentindex greater than & equal to 0)
+            currentElementParentIdx = Math.floor((currentElementIdx - 1) / 2); // math.floor(-1/2) return -1 (to restrict this I added the gurad to have parentindex greater than & equal to 0)
         }
     }
 
-    dequeue(){
-        if(this.values.length === 0) return null;
+    dequeue() {
+        if (this.values.length === 0) return null;
 
-        if(this.values.length === 1) return this.values.pop();
+        if (this.values.length === 1) return this.values.pop();
 
         const highestPriority = this.values[0];
         const lastElement = this.values.pop();
@@ -46,36 +46,36 @@ class PriorityQueue{
         return highestPriority;
     }
 
-    bubbleDown(){
+    bubbleDown() {
         let currentElementIdx = 0;
         let currentElementValue = this.values[currentElementIdx];
         let len = this.values.length;
 
-        while(true){
+        while (true) {
             let currentElementLeftChildIdx = (2 * currentElementIdx) + 1;
             let currentElementRightChildIdx = (2 * currentElementIdx) + 2;
             let swapIdx = null;
 
-            if(len > currentElementLeftChildIdx){
+            if (len > currentElementLeftChildIdx) {
                 let leftChildValue = this.values[currentElementLeftChildIdx];
 
-                if(leftChildValue.priority < currentElementValue.priority){
+                if (leftChildValue.priority < currentElementValue.priority) {
                     swapIdx = currentElementLeftChildIdx
                 }
             }
 
-            if(len > currentElementRightChildIdx){
+            if (len > currentElementRightChildIdx) {
                 let rightChildValue = this.values[currentElementRightChildIdx];
 
-                if(
+                if (
                     (swapIdx === null && rightChildValue.priority < currentElementValue.priority) ||
-                    (swapIdx !== null && rightChildValue.priority < this.values[swapIdx].priority )
-                ){
+                    (swapIdx !== null && rightChildValue.priority < this.values[swapIdx].priority)
+                ) {
                     swapIdx = currentElementRightChildIdx
                 }
             }
 
-            if(swapIdx === null) return;
+            if (swapIdx === null) return;
 
             this.values[currentElementIdx] = this.values[swapIdx];
             this.values[swapIdx] = currentElementValue;
@@ -102,77 +102,79 @@ class PriorityQueue{
 // console.log(pq.values)
 
 
-class wightedGraph{
-    constructor(){
+class wightedGraph {
+    constructor() {
         this.adjacencyList = {}
     }
 
-    addVertex(vertex){
+    addVertex(vertex) {
         this.adjacencyList[vertex] = [];
     }
 
-    addEdge(vertex1, vertex2, weight){
+    addEdge(vertex1, vertex2, weight) {
         this.adjacencyList[vertex1].push({
-            node:vertex2,
+            node: vertex2,
             weight
         });
         this.adjacencyList[vertex2].push({
-            node:vertex1,
+            node: vertex1,
             weight
         });
     }
 
-    shortestPath(start, end){
+    shortestPath(start, end) {
         const pq = new PriorityQueue();
         const distances = {};
         const previous = {};
         const finalPath = [];
 
-        for(let vertex in this.adjacencyList){
-            if(vertex === start){
+        for (let vertex in this.adjacencyList) {
+            if (vertex === start) {
                 distances[vertex] = 0;
-                pq.enqueue({value: vertex, priority: 0})
-            }else{
+                pq.enqueue({ value: vertex, priority: 0 })
+            } else {
                 distances[vertex] = Infinity;
-                pq.enqueue({value:vertex, priority:Infinity})
+                pq.enqueue({ value: vertex, priority: Infinity })
             }
 
             previous[vertex] = null;
         }
 
-        while(pq.values.length){
-            const smallestVertex = pq.dequeue().value;
+        while (pq.values.length) {
+            const smallestVertex = pq.dequeue().value; // a smallest vertex also a current vertex from where we are going to find the shortest path
 
-            if(smallestVertex === end){
+            if (smallestVertex === end) {
                 let currentvertexx = smallestVertex;
 
-                while(currentvertexx){
+                while (currentvertexx) {
                     finalPath.push(currentvertexx);
                     currentvertexx = previous[currentvertexx]
                 }
 
-                console.log('Final result',finalPath);
+                console.log('Final result', finalPath);
                 console.log('distances', distances)
-                console.log('previous',previous)
+                console.log('previous', previous)
                 break;
             }
 
             let smallestVertexNeighbors = this.adjacencyList[smallestVertex];
 
-            for(let neighborIdx in smallestVertexNeighbors){
+            for (let neighborIdx in smallestVertexNeighbors) {
                 // * for-in retruns the idx of the each element
                 let neighbor = smallestVertexNeighbors[neighborIdx];
 
                 // Aggregating the distance.
                 // distance['A'] stores the 0, neighbor "B" weight is "4" => total (0 + 4) = 4
+                // * here I am taking the smallestVertex variable, because, we are sure we need to find the smallest distance from the one we stands from.
                 let newSum = distances[smallestVertex] + neighbor.weight;
 
-                if(distances[neighbor.node] > newSum){
+                if (newSum < distances[neighbor.node]) {
                     // * updating the distance from A -> B as 4, since '4' is smmaler than infinity
                     distances[neighbor.node] = newSum; // updating the shortest distance
                     previous[neighbor.node] = smallestVertex; // shortest way to reach the neighbor
 
-                    pq.enqueue({value:neighbor.node, priority:newSum})
+                    // * since we found one new smallest path, so pushing the data into priority queue
+                    pq.enqueue({ value: neighbor.node, priority: newSum })
                 }
             }
         }
