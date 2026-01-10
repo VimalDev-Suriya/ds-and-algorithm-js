@@ -1,6 +1,6 @@
 const {
   mergeSort,
-} = require('../../algorithms/sorting/merge-sort/merge-sort-1');
+} = require('../../../algorithms/sorting/merge-sort/merge-sort-1');
 
 /**
  * Sort the given array with 0s, 1s, 2s. (considering the array has only 0, 1 & 2)
