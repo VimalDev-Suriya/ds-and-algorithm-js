@@ -33,6 +33,7 @@ const longestSubarrayWithKSum = (arr = [], k) => {
       maxLength = Math.max(maxLength, idx);
     }
 
+    // * This should always execute, because, we should add the sum to the hash always, if it was not already presnet
     if (!prefixMap.has(rem)) {
       prefixMap.set(prefixSum, i);
     }

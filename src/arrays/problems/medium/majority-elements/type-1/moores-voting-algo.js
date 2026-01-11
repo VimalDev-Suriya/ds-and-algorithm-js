@@ -49,7 +49,7 @@ const majorityElementsInArray = arr => {
         }
 
         if (counter === 0) {
-            candidate = arr[i + 1];
+            candidate = arr[i + 1] ? arr[i + 1] : null; // to prevent the array not to go beyond array limit
         }
     }
 
@@ -74,3 +74,4 @@ const majorityElementsInArray = arr => {
 console.log(majorityElementsInArray([1, 2, 3, 4, 4, 4, 4, 4])) // 4
 console.log(majorityElementsInArray([7, 7, 5, 7, 5, 1, 5, 7, 5, 5, 7, 7, 1, 1, 1, 1])) // -1
 console.log(majorityElementsInArray([7, 7, 5, 7, 5, 1, 5, 7, 5, 5, 7, 7, 5, 5, 5, 5])) // 5
+console.log(majorityElementsInArray([3, 3, 3, 4, 1, 1])) // -1 
