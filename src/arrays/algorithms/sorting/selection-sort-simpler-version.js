@@ -1,15 +1,18 @@
 const selectionSort = (arr) => {
-    let lowest
-    for(let i=0; i< arr.length; i++){
-        lowest = i;
+    let lowest;
 
-        for(let j=i+1; j<arr.length; j++){
-            if(arr[lowest] > arr[j]){
+    for (let i = 0; i < arr.length; i++) {
+        lowest = i; // considering the element as the lowest element's idx
+
+        for (let j = i + 1; j < arr.length; j++) {
+            // * if the lowest idx is greater than the j, then assigning the lowest as j
+            if (arr[lowest] > arr[j]) {
                 lowest = j
             }
         }
 
-        if(i !== lowest){
+        // swapping the lowest with i
+        if (i !== lowest) {
             [arr[lowest], arr[i]] = [arr[i], arr[lowest]]
         }
     }
