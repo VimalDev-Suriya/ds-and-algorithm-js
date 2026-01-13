@@ -16,6 +16,7 @@
     4. Sorting - Bubble Sort, merge sort, insertion sort
     5. Dutch National Flag Algo - sort 0, 1, 2
     6. Moore's Voting Algo - To find the greatest repeating element > n/2
+    7. Kadens algo - To determine the maximum sum of the subarays in the given array.
 2. Trees & Graph
     1. DFS
     2. BFS
