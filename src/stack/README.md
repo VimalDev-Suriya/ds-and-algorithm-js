@@ -3,7 +3,9 @@
 Stack is the Linear DS, which follows `Last in First Out (LIFO)`. It includes 3 main functionalitues
 1. Push - adding the data
 2. Pop - removing the data
-3. Peek - Getting the first data [not removing]
+3. Peek - Getting the first data [not removing] [this actually a top pointer]
+
+In Stack we usually use only 1 pointer called as top. Because we know that we will push data into stack and while popping out we are more concerned to remove the lastly added.
 
 ## Why do we need stack?
 ### vs Array & Linked List:
