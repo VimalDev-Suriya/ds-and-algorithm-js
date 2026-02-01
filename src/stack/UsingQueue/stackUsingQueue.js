@@ -32,7 +32,7 @@ class Queue{
       return null;
     }
 
-    const currentNode = this head;
+    const currentNode = this.head;
     const newHead = currentNode.next;
 
     currentNode.next = null;
@@ -55,9 +55,9 @@ class StackUsingQueue{
 
   push(data){
     if(this.length === 0){
-      this.queue(data);
+      this.queue.push(data);
       this.length++;
-      return this.stack;
+      return this.queue;
     }
 
     this.queue.push(data);
