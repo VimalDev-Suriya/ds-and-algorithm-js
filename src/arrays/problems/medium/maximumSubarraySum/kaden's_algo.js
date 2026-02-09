@@ -4,51 +4,38 @@
  * A algo to determine the maximum sum within the subarrays in the given array. The array may contains positive, negative, zeros
  * 
  * NOTE (Intuition): Always drop the sum to 0 , if the previous sum of subarray is < 0. 
+ * Remember if all elements are having negative elements then, based on the requiremt we should changes the logic. like below comments
+ * both apprches are correct
  */
-const maxSubarraySum = arr => {
-    if (!arr.length) return 0;
-
-    let maxSum = arr[0];
-    let currentSum = arr[0];
-    let start = 0, end = 0, tempStart = 0;
-
-    for (let i = 1; i < arr.length; i++) {
-        if (currentSum + arr[i] < arr[i]) {
-            currentSum = arr[i];
-            tempStart = i;
-        } else {
-            currentSum += arr[i];
-        }
-
-        if (currentSum > maxSum) {
-            maxSum = currentSum;
-            start = tempStart;
-            end = i;
-        }
-    }
-
-    // * listing the subarray.
-    for (let i = start; i <= end; i++) console.log(arr[i]);
-
-    return maxSum;
-}
 
 // * Not a refactord one
-const maxSubarraySum_non_refactored = arr => {
+const maxSubarraySum = arr => {
     let currentSum = 0;
-    let maxSum = -Infinity; // * this can be zero
+    let maxSum = -Infinity; // * maintain the maximum negative element
+    let start=0, end=0, tempStart = 0; 
 
     for (let i = 0; i < arr.length; i++) {
         currentSum += arr[i];
 
-        if (currentSum < 0) {
-            currentSum = 0;
-        }
+        // * handling the current sum drop here will make the maxSum as 0 if all the elements are negative.
+        // if (currentSum < 0) {
+        //     currentSum = 0;
+        // }
 
         if (currentSum > maxSum) {
-            maxSum = currentSum
+            maxSum = currentSum;
+            end = i;
+            start = tempStart;
+        }
+
+        // This will allow to determin the maxSum to be negative.
+        if(currentSum < 0){
+            currentSum = 0;
+            tempStart = i+1; // * here I am +1 because we know that till i, the sum is less than the 0, so I need to start the tempStart from the next element 
         }
     }
+
+    const subArray = arr.slice(start, end+1);
 
     return maxSum;
 }
