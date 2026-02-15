@@ -29,6 +29,6 @@ const arr = [1, 2, 3];
 const subArrayCount = (3*4)/2; // 6;
 //* If I want to count how many subarrays that holds the value 2, the we can use 
 // arr[i] = (i+1) * (n - i)
-const presentIn = (1 +1) * (3 - 1); // i is the index of the element
+const presentIn = (1 + 1) * (3 - 1); // i is the index of the element
 
 ```

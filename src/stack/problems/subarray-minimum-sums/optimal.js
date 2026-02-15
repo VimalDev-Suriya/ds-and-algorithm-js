@@ -58,8 +58,6 @@ const minimumSumInSubArrays = arr => {
         total = total + left * right * arr[i]
     }
 
-    console.log('total', total)
-
     return total;
 }
 

@@ -9,9 +9,8 @@
  * Output: [12, -1, 6, 5, 2, 5, 6, 4, 2, 4, 6, -1]
  * 
  * 1. The Brute force is O(n^2), so I need to somehow want to amke the better solution at, O(n) / O(logn)
- * Here we know we are finding the next greater element to right side of the current element.
- * But we are sure we dont know the greatest elemnt since we are staring from left.
- * So can we start from right? -> YES
+ * So can we start from right? -> YES & why?
+ * To determine next greater/smaller elements, we should know them inorder to determin. But we dont have them handly, so in-order to determine that we are starting from the last element, by assuming that the greater/smaller right side of the last element is already processed & present in Stack, But we know underthehood its not so we are assigning them as -1.
  * 
  * 2. If Stack is empty, we can say that there is no greater element than the corresponding ele, so we can assign the value as -1
  * 

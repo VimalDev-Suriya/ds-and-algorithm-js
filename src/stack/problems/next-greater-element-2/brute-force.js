@@ -2,7 +2,7 @@
 // * Finding the next greater element by considering the array as the rotated one.
 // * Eg: nge2([2, 10, 12, 1, 11]); // [10, 12, -1, 11, 12], here the nge of 11 is 12, by considering the array as rotated.
 
-// Note: Intutions -> Using modulo
+// Note: Intutions -> Hypothetical array using modulo.
 // // [2, 10, 12, 1, 11] |2(5), 10(6), 12(7), 1(8), 11(9)| => |..| consider the array elements are the hypotheitical one.
 // 1%5 = 1; 6%5 = 1 | So this is the catch 
 
