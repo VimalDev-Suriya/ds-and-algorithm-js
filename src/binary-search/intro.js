@@ -1,6 +1,6 @@
 /**
  * Binary Search
- * Helps to determine the element in the Sorted Array.
+ * Helps to find the element in the Sorted Array.
  * 
  * Terminologies:
  * low, high, mid
@@ -19,7 +19,7 @@
  * 
  * Time Complexity:
  * (log N), because we are not iterating over the entire array
- * As we progress we are reducing the serach space to n/2 each ietrations
+ * As we progress we are reducing the serach space to n/2 each iterations
  * for O(log n)
  * 
  * Overflow cases.
@@ -31,7 +31,9 @@
  */
 
 const binarySearch = (arr, target) => {
-    if (!Array.isArray(arr) || !target || !arr.length) return -1;
+    if (!Array.isArray(arr) || !target) return -1;
+
+    if(arr.length === 0) return 0;
 
     let low = 0;
     let high = arr.length - 1;
