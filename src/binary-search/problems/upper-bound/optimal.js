@@ -16,18 +16,18 @@ const upperBound = (arr, target) => {
     if (!Array.isArray(arr) || !target || arr.length === 0) return -1;
 
     let up = arr.length - 1;
-    let low = 0;
-    let high = arr.length - 1;
+    let start = 0;
+    let end = arr.length - 1;
     let mid;
 
-    while (low <= high) {
-        mid = Math.floor((low + high) / 2);
+    while (start <= end) {
+        mid = Math.floor((start + end) / 2);
 
         if (arr[mid] > target) {
             up = mid;
-            high = mid - 1;
+            end = mid - 1;
         } else {
-            low = mid + 1
+            start = mid + 1
         }
     }
 

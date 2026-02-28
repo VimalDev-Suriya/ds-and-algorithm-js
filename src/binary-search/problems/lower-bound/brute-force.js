@@ -15,7 +15,7 @@ const findLowerBound = (arr, target) => {
     if (!Array.isArray(arr) || !target || arr.length === 0) return -1;
 
     // Initializing the lb to last element, to catch if there is no element found
-    let lb = arr.length - 1;
+    let lb = arr.length;
 
     for (let i = 0; i < arr.length; i++) {
         if (arr[i] >= target) {

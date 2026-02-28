@@ -1,21 +1,21 @@
 /**
  * Binary Search
- * Helps to find the element in the Sorted Array.
+ * Helps to find the element in the *Sorted Array*.
  * 
  * Terminologies:
- * low, high, mid
- * Initialy: low = 0 & high = n-1 [n is length of the array]
- * All the elements between low & high is called search space.
- * Mid = Math.floor((high + low ) / 2);
+ * start, end, mid
+ * Initialy: start = 0 & end = n-1 [n is length of the array]
+ * All the elements between start & end is called search space.
+ * Mid = Math.floor((end + start ) / 2);
  * 
  * Flow
  * Untill you find the element we need to to split the array which reduces our serach space.
  * IF target < mid, THEN
- * high = mid - 1;
+ * end = mid - 1;
  * ELSE
- * low = mid + 1 
+ * start = mid + 1 
  * The Coresponding target element will be positioned in Mid
- * If the low > high, means there is no serach space, under this its for sure there is no element persent.
+ * If the start > end, means there is no serach space, under this its for sure there is no element persent.
  * 
  * Time Complexity:
  * (log N), because we are not iterating over the entire array
@@ -24,30 +24,30 @@
  * 
  * Overflow cases.
  * Consider the array which has the length MAX_INT, on this occasion, if the target element is the last last element, we will be resulted in the scenario like below
- * mid = (low + high) /2; where both low & high are MAX_INT, which cannot be stored in mid.
+ * mid = (start + end) /2; where both start & end are MAX_INT, which cannot be stored in mid.
  * So either we can make sure to assign the mid as big_int/long etc or
- * mid = low + (high - low)/2; this formula is ~= (2low + high - low)/2 ~= (low + high)/2;
- * so we will be reduing the high - low which will not result n overflow.
+ * mid = start + (end - start)/2; this formula is ~= (2low + end - start)/2 ~= (start + end)/2;
+ * so we will be reduing the end - start which will not result n overflow.
  */
 
 const binarySearch = (arr, target) => {
     if (!Array.isArray(arr) || !target) return -1;
 
-    if(arr.length === 0) return 0;
+    if (arr.length === 0) return 0;
 
-    let low = 0;
-    let high = arr.length - 1;
+    let start = 0;
+    let end = arr.length - 1;
     let mid;
 
-    while (low <= high) {
-        mid = Math.floor((high + low) / 2);
+    while (start <= end) {
+        mid = Math.floor((end + start) / 2);
 
         if (arr[mid] === target) {
             return mid;
         } else if (arr[mid] < target) {
-            low = mid + 1
+            start = mid + 1
         } else {
-            high = mid - 1;
+            end = mid - 1;
         }
     }
 
@@ -57,26 +57,26 @@ const binarySearch = (arr, target) => {
 const binarySearch_recursive = (arr, target) => {
     if (!Array.isArray(arr) || !target || !arr.length) return -1;
 
-    let low = 0
-    let high = arr.length - 1;
+    let start = 0
+    let end = arr.length - 1;
 
-    const serach = (arr, low, high, target) => {
-        if (low > high) return -1;
+    const serach = (arr, start, end, target) => {
+        if (start > end) return -1;
 
-        mid = Math.floor((low + high) / 2);
+        mid = Math.floor((start + end) / 2);
 
         if (arr[mid] === target) {
             return mid;
         } else if (arr[mid] < target) {
-            low = mid + 1;
+            start = mid + 1;
         } else {
-            high = mid - 1;
+            end = mid - 1;
         }
 
-        return serach(arr, low, high, target);
+        return serach(arr, start, end, target);
     };
 
-    return serach(arr, low, high, target)
+    return serach(arr, start, end, target)
 }
 
 console.log(binarySearch([3, 4, 6, 7, 9, 12, 16, 17], 9))

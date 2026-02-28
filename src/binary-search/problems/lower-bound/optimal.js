@@ -1,6 +1,7 @@
 /**
  * Lower bound in the given array.
  * To determine the lowest index of the given target in the array.
+ * It helps to identify the insert position of the target element, without disturbing the order of the element
  * 
  * To find the index of the element arr[idx] >= x [here we are determing the starting index (position) of greater element (target)]
  * 
@@ -22,19 +23,21 @@ const findLowerBound = (arr, target) => {
 
     // Initializing the lb to last element, to catch if there is no element found
     let lb = arr.length - 1;
-    let low = 0;
-    let high = arr.length - 1;
+    let start = 0;
+    let end = arr.length - 1;
     let mid;
 
-    while (low <= high) {
-        mid = Math.floor((low + (high - low) / 2)); // handling the overflor scenario - refer the function defeinition in brute-force solution
+    while (start <= end) {
+        mid = Math.floor((start + (end - start) / 2)); // handling the overflor scenario - refer the function defeinition in brute-force solution
 
         // * here we are not find the element, instead we are determining the probablity of the max element
         if (arr[mid] >= target) {
-            lb = mid; // * so here I am assigning the mid to lb, since this mid may be the solution. Not the exact
-            high = mid - 1;
+            // * so here I am assigning the mid to lb, since this mid may be the solution. 
+            // * Not the exact lb but a potential candidate
+            lb = mid;
+            end = mid - 1;
         } else {
-            low = mid + 1;
+            start = mid + 1;
         }
     }
 
