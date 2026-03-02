@@ -1,5 +1,6 @@
+// *** WITHOUT DUPLICATES ONLY THIS SOLUTIONS WORKS
 /**
- * Using Binary Search
+ * Using Binary Search [without duplicates]
  * here we are going to find the element in the sorted arra [but its rotated].
  * 
  * @intuition
