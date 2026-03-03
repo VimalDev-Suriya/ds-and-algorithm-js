@@ -43,3 +43,8 @@ floor([10, 20, 30, 40, 50], 30); // 30
 ### Ceil
 - It is the lower bound
 - `arr[mid] >= target`
+
+### First and Last Occurance:
+- Solution 1 -> Determining the Lower and upper bound (UP - 1)
+- SOlution 2 -> Simple binary search to determine the First and last
+
