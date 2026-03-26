@@ -23,6 +23,8 @@
 3. Graph
     1. Dijstras Algorithm - Shortest path
 
+- A question which makes us to rethink/reframe the question which can easily help me to solve the problem [./src/sliding-window-2-pointer/max-consecutive-ones-(part3)]
+
 ## References
 LINK TO TRACK THE PROBLEMS.
 https://takeuforward.org/strivers-a2z-dsa-course/strivers-a2z-dsa-course-sheet-2/
