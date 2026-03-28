@@ -6,7 +6,7 @@
  * pow(5, 3) // 125
  *
  * @time_complexity
- * O(log n)
+ * O(log2 n)
  *
  * @formula
  * X ^ n;
