@@ -7,14 +7,14 @@
  * This algo works on the basis of a rules that the array of n elements should be
  * [0        .... low - 1]    => 0 (only 0's)
  * [low      .... mid - 1]    => 1 (only 1's)
- * [high + 1 .... n - 1]      => 2 (only 2's)
  * [mid      .... high]       => un-sorted elements (combination of 0/1/2)
+ * [high + 1 .... n - 1]      => 2 (only 2's)
  * 
  * Thought process [3 pointers, low, mid, high]
  * There are 3 possible values
  * 1. I am always going to consider that the given element is not sorted
  * 2. So based on our assumption array, all the unsorted elements will be present from [mid .... high]
- * 3. So comparing this with our array.
+ * 3. So comparing this with our hypothetical array.
  * 4. arr[mid] is the first element
  * 5. arr[high] is the last element
  * 6. arr[low] is somewhere back, but i am considering the arr[low] is also in same point where we are pointing arr[mid]

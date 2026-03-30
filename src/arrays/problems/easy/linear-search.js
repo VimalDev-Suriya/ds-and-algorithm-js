@@ -1,7 +1,7 @@
 // * Find the first occurance of the ele in the array and return its index
 const linearSearch_first_occuarnce = (arr, ele) => {
-    for(let i =0; i< arr.length; i++){
-        if(arr[i] === ele){
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] === ele) {
             return i
         }
     }
@@ -11,12 +11,12 @@ const linearSearch_first_occuarnce = (arr, ele) => {
 
 // * Find the last occurance of the ele in the array and return its index
 const linearSearch_last_occurance = (arr, ele) => {
-    for(let i = arr.length - 1; i >= 0; i--){
-        if(arr[i] === ele){
+    for (let i = arr.length - 1; i >= 0; i--) {
+        if (arr[i] === ele) {
             return i
         }
     }
-    
+
     return -1;
 }
 
@@ -24,8 +24,8 @@ const linearSearch_last_occurance = (arr, ele) => {
 const linearSearch = (arr, ele) => {
     let occurance = [];
 
-    for(let i = 0; i < arr.length; i++){
-        if(arr[i] === ele){
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] === ele) {
             occurance.push(i);
         }
     }
