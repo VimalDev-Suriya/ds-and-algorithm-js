@@ -4,6 +4,9 @@
 const isPrime = n => {
     if (!n || typeof n !== "number") return false;
 
+    // * 1 is not the primenumber
+    if (n === 1) return false;
+
     let count = 0;
 
     for (let i = 1; i <= n; i++) {
