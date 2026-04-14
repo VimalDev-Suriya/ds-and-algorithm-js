@@ -52,4 +52,5 @@ console.log(getSongs([
     ["Good Times Bad Times", "2:48"], ["Hot Dog", "3:19"],
     ["The Crunge", "3:18"], ["Achilles Last Stand", "10:26"],
     ["Black Dog", "4:55"]
-], 7))
+], 7)); // hot dog and rooc & roll
+
