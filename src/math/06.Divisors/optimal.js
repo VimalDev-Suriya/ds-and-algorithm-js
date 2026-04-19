@@ -29,8 +29,10 @@ const getAllDivisors = (n) => {
         if (n % i === 0) {
             result.push(i);
 
-            if (Math.floor(n / i) !== i) {
-                result.push(Math.floor(n / i))
+            // * We dont need Math.floor because if a % b = 0 then a / b is also possible with any floting number
+            // consider the number 15, 15 % 3 = 0, so we can say that 15/3 is completly possible and the result is also a divisor.
+            if ((n / i) !== i) {
+                result.push((n / i))
             }
         }
     }
