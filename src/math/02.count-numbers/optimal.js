@@ -1,4 +1,3 @@
-
 // TC => O(log10 N), where N is the number
 const count = n => {
     let count = 0;
