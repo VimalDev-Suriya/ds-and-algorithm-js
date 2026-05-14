@@ -16,7 +16,6 @@
 //     return arr;
 // }
 
-
 //* We know after one pass, we will have the largest element at the last
 // * so for each pass, each elements at the last set of pass (like first pass, last element is soretd, 2nd pass last 2 elemnt is sorted) will be in sorted array,
 // * so we dont need to compare the last elements
@@ -28,30 +27,30 @@
 //             }
 //         }
 //     }
-    
+
 //     return arr;
 // }
 
 // * Consider a scenario, only one element in the array is not in sorted position
 // * under this scenario, we dont ant to loop over all the data
-// * so lets add the condition within the pass, 
+// * so lets add the condition within the pass,
 // if there is no swap done, which is not required to be loop in the pass.
 const bubbleSort = (arr = []) => {
-    let noSwap;
+  let noSwap;
 
-    for(let i=0; i < arr.length; i++){
-        noSwap = true
-        for(let j=0; j<arr.length - i; j++){
-            if(arr[j] > arr[j+1]){
-                [arr[j+1], arr[j]] = [arr[j], arr[j+1]]
-                noSwap = false
-            }
-        }
-
-        if(noSwap) break;
+  for (let i = 0; i < arr.length; i++) {
+    noSwap = true;
+    for (let j = 0; j < arr.length - i; j++) {
+      if (arr[j] > arr[j + 1]) {
+        [arr[j + 1], arr[j]] = [arr[j], arr[j + 1]];
+        noSwap = false;
+      }
     }
-    
-    return arr;
-}
 
-console.log(bubbleSort([2, 5, 1, -1, -2]))
+    if (noSwap) break;
+  }
+
+  return arr;
+};
+
+console.log(bubbleSort([2, 5, 1, -1, -2]));

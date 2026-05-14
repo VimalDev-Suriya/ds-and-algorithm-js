@@ -38,7 +38,7 @@ const quick_sort_asc = (arr = []) => {
   for (let i = 0; i < arr.length; i++) {
     if (arr[i] < pivot) {
       left.push(arr[i]);
-    } else if (arr[i] > pivot) {
+    } else {
       right.push(arr[i]);
     }
   }
@@ -46,6 +46,17 @@ const quick_sort_asc = (arr = []) => {
   return [...quick_sort_asc(left), pivot, ...quick_sort_asc(right)];
 };
 
-module.exports = {
-  quick_sort_asc,
-};
+console.log(quick_sort_asc([6, 3, 1, 7, -1, 30, -2, 10]));
+
+// * Algo Flow
+
+// [5, 4, 3, 2, 1]
+// pivot 1 -> [[], 1 [5, 4, 3, 2]] -> finally [1, 2, 3, 4, 5]
+// pivoot left []
+
+// pivot right 2 -> [[], 2, [5, 4, 3]] -> (finally) [2, 3, 4, 5]
+// pivot right left []
+
+// pivot right right 3 -> [[], 3, [5, 4]] -> (finally) [3, 4, 5]
+// pivot right right left -> []
+// pivot right right right -> [[], 4, [5]] ->(finally) [...[], 4, 5]
