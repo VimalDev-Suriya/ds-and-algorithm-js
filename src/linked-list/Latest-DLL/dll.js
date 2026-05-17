@@ -1,181 +1,180 @@
 class Node {
-    constructor(value){
-        this.value = value;
-        this.prev = null;
-        this.next = null;
-    }
+  constructor(value) {
+    this.value = value;
+    this.prev = null;
+    this.next = null;
+  }
 }
 
-class DoubllyLinkedList{
-    constructor(){
-        this.head = null;
-        this.tail = null;
-        this.length = 0;
+class DoubllyLinkedList {
+  constructor() {
+    this.head = null;
+    this.tail = null;
+    this.length = 0;
+  }
+
+  push(data) {
+    const newNode = new Node(data);
+    if (!this.head) {
+      this.head = newNode;
+      this.tail = this.head;
+    } else {
+      this.tail.next = newNode;
+      newNode.prev = this.tail;
+      this.tail = newNode;
     }
 
-    push(data){
-        const newNode = new Node(data);
-        if(!this.head){
-            this.head = newNode;
-            this.tail = this.head;
-        }else{
-            this.tail.next = newNode;
-            newNode.prev = this.tail;
-            this.tail = newNode;
-        }
+    this.length++;
+    return this;
+  }
 
-        this.length++;
-        return this;
+  pop() {
+    if (!this.head) return undefined;
+
+    if (this.length === 1) {
+      this.head = null;
+      this.tail = null;
+      this.length = 0;
+      return true;
     }
 
-    pop(){
-        if(!this.head) return undefined;
+    // * Since DLL have both prev & next pointer in the single node, its easy to push & pop
+    // * we can directly take the last element and pop it out
+    let oldTail = this.tail;
+    let newTail = oldTail.prev;
 
-        if(this.length === 1){
-            this.head = null;
-            this.tail = null;
-            this.length = 0;
-            return true;
-        }
+    newTail.next = null;
+    oldTail.prev = null;
 
-        // * Since DLL have both prev & next pointer in the single node, its easy to push & pop
-        // * we can directly take the last element and pop it out
-        let oldTail = this.tail;
-        let newTail = oldTail.prev;
+    this.tail = newTail;
 
-        newTail.next = null;
-        oldTail.prev = null;
+    this.length--;
 
-        this.tail = newTail;
-
-        this.length--;
-
-        // * Consider a scenario where DLL has already have 2 element, afetr removing, it will have only one so assigning the tail & head as same.  
-        if(this.length === 1){
-            this.tail = this.head;
-        }
-
-        return true
+    // * Consider a scenario where DLL has already have 2 element, after removing, it will have only one so assigning the tail & head as same.
+    if (this.length === 1) {
+      this.tail = this.head;
     }
 
-    // Shift -> removing the data from beginning
-    shift(){
-        if(!this.head){
-            return null
-        }
+    return true;
+  }
 
-        if(this.length === 1){
-            this.head = this.tail = null;
-            this.length--;
-            return;
-        }
-
-        let currentHead = this.head;
-        let newHead = currentHead.next;
-
-        currentHead.next = null;
-        newHead.prev = null;
-
-        this.head = newHead;
-        this.length--;
-
-        return newHead;
+  // Shift -> removing the data from beginning
+  shift() {
+    if (!this.head) {
+      return null;
     }
 
-    // unshift -> Adding the data from beginning
-    unshift(data){
-        const newNode = new Node(data);
-
-        if(!this.head){
-            this.head = newNode;
-            this.tail = this.head;
-        }else{
-            let currentHead = this.head;
-            newNode.next = currentHead;
-            currentHead.prev = newNode;
-
-            this.head = newNode;
-        }
-
-        this.length++;
-        return this;
+    if (this.length === 1) {
+      this.head = this.tail = null;
+      this.length--;
+      return;
     }
 
-    get(pos){
-        if(pos < 0 || pos >= this.length) return undefined;
+    let currentHead = this.head;
+    let newHead = currentHead.next;
 
-        let counter = 0;
-        let currentNode = this.head;
+    currentHead.next = null;
+    newHead.prev = null;
 
-        while(currentNode.next){
-            if(pos === counter){
-                break;
-            }
+    this.head = newHead;
+    this.length--;
 
-            counter++;
-            currentNode = currentNode.next;
-        }
+    return newHead;
+  }
 
-        return currentNode;
+  // unshift -> Adding the data from beginning
+  unshift(data) {
+    const newNode = new Node(data);
+
+    if (!this.head) {
+      this.head = newNode;
+      this.tail = this.head;
+    } else {
+      let currentHead = this.head;
+      newNode.next = currentHead;
+      currentHead.prev = newNode;
+
+      this.head = newNode;
     }
 
-    set(pos, data){
-        if(pos < 0 || pos >= this.length) return false;
+    this.length++;
+    return this;
+  }
 
-        const getNode = this.get(pos);
-        getNode.value = data;
+  get(pos) {
+    if (pos < 0 || pos >= this.length) return undefined;
 
-        return true
+    let counter = 0;
+    let currentNode = this.head;
+
+    while (currentNode.next) {
+      if (pos === counter) {
+        break;
+      }
+
+      counter++;
+      currentNode = currentNode.next;
     }
 
-    insert(pos, data){
-        if(pos < 0 || pos > this.length) return undefined;
+    return currentNode;
+  }
 
-        if(pos === 0){
-            return this.unshift(data);
-        }
+  set(pos, data) {
+    if (pos < 0 || pos >= this.length) return false;
 
-        if(pos === this.length){
-            return this.push(data);
-        }
+    const getNode = this.get(pos);
+    getNode.value = data;
 
-        let newNode = new Node(data);
-        let pivotNode = this.get(pos - 1);
-        let prevCurrentNode = pivotNode.next;
+    return true;
+  }
 
-        prevCurrentNode.prev = newNode;
-        newNode.next = prevCurrentNode;
-        newNode.prev = pivotNode;
-        pivotNode.next = newNode;
+  insert(pos, data) {
+    if (pos < 0 || pos > this.length) return undefined;
 
-        this.length++;
-        return newNode;
+    if (pos === 0) {
+      return this.unshift(data);
     }
 
-    reverse(){
-        let currentNode = this.head;
-        
-        // * swapping the head and tail.
-        this.head = this.tail;
-        this.tail = currentNode;
-
-        // 3 pointers
-        // prev, current, next.
-        let prevNode = null;
-        let nextNode;
-        
-        while(currentNode){
-            nextNode = currentNode.next; 
-    
-            currentNode.prev = nextNode;
-            currentNode.next = prevNode;
-
-            prevNode = currentNode;
-
-            currentNode = nextNode;
-        }
-
+    if (pos === this.length) {
+      return this.push(data);
     }
+
+    let newNode = new Node(data);
+    let pivotNode = this.get(pos - 1);
+    let prevCurrentNode = pivotNode.next;
+
+    prevCurrentNode.prev = newNode;
+    newNode.next = prevCurrentNode;
+    newNode.prev = pivotNode;
+    pivotNode.next = newNode;
+
+    this.length++;
+    return newNode;
+  }
+
+  reverse() {
+    let currentNode = this.head;
+
+    // * swapping the head and tail.
+    this.head = this.tail;
+    this.tail = currentNode;
+
+    // 3 pointers
+    // prev, current, next.
+    let prevNode = null;
+    let nextNode;
+
+    while (currentNode) {
+      nextNode = currentNode.next;
+
+      currentNode.prev = nextNode;
+      currentNode.next = prevNode;
+
+      prevNode = currentNode;
+
+      currentNode = nextNode;
+    }
+  }
 }
 
 const dll = new DoubllyLinkedList();
@@ -189,5 +188,4 @@ dll.push(1).push(2).push(3);
 // dll.insert(1, 'test')
 console.log(dll);
 dll.reverse();
-console.log(dll)
-
+console.log(dll);

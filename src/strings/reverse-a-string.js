@@ -21,6 +21,7 @@ const reverseString = (str) => {
 // * Another Brute force solution
 // * The flag variable consumes the additional space - results in space complexity
 // * in JS the strings can be handled as the array like
+// * Most efficeit way
 const reverseString1 = (str) => {
   const stringArr = str.split('');
   const reversedString = [];

@@ -1,5 +1,5 @@
 // step 1;
-// 7789 % 10 = 9; 
+// 7789 % 10 = 9;
 // 7789 / 10 = 778.9 => Math.floor(778.9) = 778
 
 // Setp 2
@@ -20,19 +20,19 @@
 // if the division is due to by 2, then TC is log to the base 2.
 // So whenever we are dividing the N by anynumber it will be the log
 const getExtractionOfNumbers = (n) => {
-    const result = [];
+  const result = [];
 
-    // log10 N => 3.81 + 1 => 4 [this is another approch to find the count]
+  // log10 N => 3.81 + 1 => 4 [this is another approch to find the count]
 
-    while (n > 0) {
-        // * the % returns the reminder
-        result.push(n % 10);
+  while (n > 0) {
+    // * the % returns the reminder
+    result.push(n % 10);
 
-        // "/" retruns the quotient
-        n = Math.floor(n / 10);
-    }
+    // "/" returns the quotient
+    n = Math.floor(n / 10);
+  }
 
-    return result;
-}
+  return result;
+};
 
-console.log(getExtractionOfNumbers(7789))
+console.log(getExtractionOfNumbers(7789));
