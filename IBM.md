@@ -1,6 +1,7 @@
 # IBM list of questions
 
 ## String Problems
+
 1. Palindrom
 2. Longest substring without repeating characters
 3. remove duplicates from string
@@ -10,7 +11,8 @@
 7. string comparison
 8. Binary string Operations
 
-## Array
+## Array - DONE
+
 1. Find second largest element
 2. Move zeros to the end
 3. Rotate array
@@ -21,13 +23,15 @@
 8. Leader in array
 
 ## Pattern and Simulation problems
+
 1. Binary Transformation
 2. Minum ops problem
 3. Flip Characters
 4. Odd/Even Gruping logic
 5. Greedy-based Splitting problem
 
-## Maths
+## Maths - DONE
+
 1. Primenumber check
 2. GCD & LCM
 3. Finonacci
@@ -37,31 +41,39 @@
 7. Reverse number
 8. Armstrong number
 
-## Recusion basics
-1. Fibonacci 
+## Recusion basics - DONE
+
+1. Fibonacci
 2. Factorial
 3. string reverse recirsion
 4. Sum of digits
 
 ## Hashmap / Disctonery
+
 1. Count duplicates
 2. Frequncy map
 3. First non-repeating character
 4. two sum (optmized)
 5. Group Anagram
 
-## Linked List
+## Linked List - DONE
+
 1. Reverse linked List
 2. Detect loop
 3. Find Middle node.
 
-## Searching and Sorting
+## Searching and Sorting - DONE
+
 1. Linear and Binary Search
 2. Sorting
 
 ## Greedy logic Problems
+
 1. Minimum Flips
 2. Minimum Moves
 3. Pair grouping problem
 4. Interval merging
 5. Coin change.
+
+- Group Anagram
+- Longest substring without repeating characters

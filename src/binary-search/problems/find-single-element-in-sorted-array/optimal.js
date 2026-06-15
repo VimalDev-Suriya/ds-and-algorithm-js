@@ -3,7 +3,7 @@
  *
  * @intuition
  * Why we need a Binary serach -> Because we are finding unique a element in SORTED ARRAY.
- * - Binary serach is mainly of eliminating the right half.
+ * - Binary serach is mainly of eliminating the correct half.
  *
  * @question1
  * How we can determine the single element?

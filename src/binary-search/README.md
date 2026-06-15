@@ -13,7 +13,17 @@
 - If the target stands between the start and mid (excluced), then we can reduce the end = mid - 1
 - if target stands between mid (excluded) and end, then we can reduce the start = mid + 1
 
-**Note**: Always make sure to adjust the start & end based on the condition
+**Notes**:
+
+- Always make sure to adjust the start & end based on the condition.
+- There is the chance of overflow of start and end, if both are a very big integer numbers, so we should be using the below math formula to esape
+
+```js
+mid = Math.floor((start - end) / 2 + end);
+
+// As in simple the (start - end + 2end)/2 => (start + end) / 2
+// In JS we dont need this because in JS all integers are double precesion floats, so overflow is not possible
+```
 
 ## When to use Binary Serach?
 
@@ -26,7 +36,10 @@
 
 ### Lower Bound
 
+A **smallest index** in the array, where the element in **greater than or equal to** the target element.
+
 - To determin the lowest possible index to insert the element in the sorted array.
+- find the index of the first element that is greater than or equal to the target
 - `arr[mid] >= target`
 - here we are finding the possibility, so we wont stop the loop until the serach space is empty
 
@@ -37,6 +50,8 @@ console.log(findLowerBound([3, 5, 8, 8, 15, 19], 8)); // 2
 
 ### Upper Bound
 
+A **largest index** in the given **sorted array**, where the element is **greater than** the target
+
 - To determin the highest possible index to insert the element
 - `arr[i] > target`
 - here we are finding the possibility, so we wont stop the loop until the serach space is empty
@@ -45,6 +60,22 @@ console.log(findLowerBound([3, 5, 8, 8, 15, 19], 8)); // 2
 console.log(upperBound([2, 4, 6, 9, 9, 10, 11, 16], 9)); // 5
 console.log(upperBound([2, 4, 6, 9, 10, 11, 16], 9)); // 4
 ```
+
+### Use cases for lower and upper bound:
+
+1. Determining the frequency of the duplicate element (one single duplicate element) in the sorted array, using the formula of (upperbound - lowerbound)
+   1. Determining **First and Last Occurance** of the element
+      1. First occuarnce => lower bound
+      2. Last occuarnce => upperbound - 1
+2. Determining the insert position of the new element in the sorted array - We can use **lower bound** here.
+3. Closest smaller or larger element for the given target.
+   1. Ceil - closest larger element (lower bound)
+   2. Floor - Closest smaller element (lower bound - 1)
+
+#### Realtime usecase
+
+1. Database Indexing (B+ Trees)
+2. Vlookup / xlookup
 
 ### Floor
 

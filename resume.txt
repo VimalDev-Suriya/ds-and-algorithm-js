@@ -1,0 +1,31 @@
+•	Connected with my Product owner and Business Analysts to Identify some potential PRB’s in the legacy products and fixed them & released to PROD. Where I got appreciation for identifying the loop holes on the same.
+•	Performing Peer code review with in my team and also reviewed the partner teams code during the code review call.
+•	Connected with Accessibility team and identified some of the open Accessibility issues and fixed them in React UI.
+•	Implemented the changes for our Policy Screens in React Native version migration from v0.7x to v0.8x.
+•	Collaborated with DevOps and partner teams to troubleshoot environment related downtimes and ensure stable deployments across lower environments.
+•	Performed Currency updates like Node runtime upgrade for AWS lambda deployment.
+•	Resolved multiple Snyk-reported security vulnerabilities by fixing exposed credentials and upgrading deprecated dependencies across JavaScript applications.
+•	Implemented the Snyk in our SDLC process to reduce the Synk issues by adding the Synk in Git pre-commit hooks.
+•	Used the Copilot and Claude to increase the productivity in my deliverables and show cased to team on the consumption of less story points.
+•	Built internal AI-powered developer assistants using GitHub Copilot and Claude to automate code reviews and test generation, improving developer productivity.
+•	For API – Sub agent can help us identify the corresponding node in the JSON response on from where and how the corresponding node was constructed – this highly helped me to narrow down some the issue during debugging 
+•	For UI – Creating the UI with our pre-built Web-components.
+
+•	Developed scalable React micro-frontends for Travelers Insurance customer applications used by thousands of users. 
+•	Developed multiple production ready React Micro front ends and all the pages were successfully released in production.
+•	Worked in multiple Experience and Core API’s using Node JS, which was consumed by the React Front ends.
+•	Learned new skills like C# and .Net Core (v6 & v8) and adapted to implement new features in those .Net APIs.
+
+
+
+Collaborated with product owners and business analysts to identify and resolve critical issues in legacy systems, delivering production fixes that improved reliability.
+Performed peer code reviews across internal and partner teams, ensuring adherence to coding standards and improving overall code quality.
+Partnered with accessibility teams to identify and resolve accessibility issues in React applications, improving compliance with accessibility standards.
+Supported React Native version migration (v0.7x → v0.8x) by implementing updates to policy-related screens.
+Improved platform stability by collaborating with DevOps teams, resolving environment issues, and performing infrastructure updates such as Node.js runtime upgrades for AWS Lambda.
+Strengthened application security by resolving Snyk vulnerabilities and integrating Snyk checks into the SDLC using Git pre-commit hooks.
+Built internal AI-powered developer assistants using GitHub Copilot and Claude to automate code reviews, debugging insights, and test generation.
+
+Developed production-ready React micro-frontends for Travelers Insurance customer platforms, enabling modular UI development and scalable product architecture.
+Built and enhanced customer-facing features using React and Node.js APIs, improving platform usability and feature delivery.
+Contributed to serverless backend APIs using Node.js and AWS Lambda, supporting frontend micro-frontend applications.

@@ -1,43 +1,29 @@
-// * Arrays
-// * Sorting
-// * Easy Problems
-// * Medium Problems
-// * Binary Search
-// * Sliding Window & 2 pointer
+const upperBound = (arr, target) => {
+  // * upperbound should always return the index, so if there are falsy values always retrun -1
+  if (!Array.isArray(arr) || arr.length === 0) return -1;
 
-// * Maths
+  if (target === undefined || target === null) return -1;
 
-// * Strings
-
-const merge = (leftArray, rightArray) => {
-  const temp = [];
   let left = 0;
-  let right = 0;
+  let right = arr.length - 1;
+  let mid;
+  let up = arr.length; // if we did not found the element it should return the index after the element
 
-  while (left < leftArray.length && right < rightArray.length) {
-    if (leftArray[left] < rightArray[right]) {
-      temp.push(leftArray[left]);
-      left++;
+  while (left <= right) {
+    mid = Math.floor((left - right) / 2 + right);
+
+    if (arr[mid] > target) {
+      up = mid;
+      right = mid - 1;
     } else {
-      temp.push(rightArray[right]);
-      right++;
+      left = mid + 1;
     }
   }
 
-  const remainingLeftArrayELements = leftArray.slice(left);
-  const remainingRightArrayELements = rightArray.slice(right);
-
-  return temp.concat(remainingLeftArrayELements, remainingRightArrayELements);
+  return up;
 };
 
-const mergeSort = (arr = []) => {
-  if (arr.length <= 1) return arr;
-
-  const mid = Math.floor(arr.length / 2);
-  const leftArray = mergeSort(arr.slice(0, mid));
-  const rightArray = mergeSort(arr.slice(mid));
-
-  return merge(leftArray, rightArray);
-};
-
-console.log(mergeSort([6, 3, 1, 7, -1, 30, -2, 10]));
+console.log(upperBound([2, 4, 6, 9, 9, 10, 11, 16], 9)); // 5
+console.log(upperBound([2, 4, 6, 9, 10, 11, 16], 9)); // 4
+console.log(upperBound([2, 4, 6, 9, 10, 11, 16], 19)); // 7
+console.log(upperBound([2, 4, 6, 9, 10, 11, 16], 10)); // 5
