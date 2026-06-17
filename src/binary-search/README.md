@@ -29,7 +29,7 @@ mid = Math.floor((start - end) / 2 + end);
 
 1. Searching - in Sorted array, a difinite pattern, where the array increases and decreases [Determining the peak element]
 2. Rotated Sorted array
-3. When there is a possible solutions till the pivot and afyer that there can't be any solutions [Square root]
+3. When there is a possible solutions till the pivot and after that there can't be any solutions [Square root]
    1. Whenever the question is asking to find Min/Max and we know the range from where it starts and ends. Then we can use Binary search
 
 ## Type of problems
@@ -41,7 +41,7 @@ A **smallest index** in the array, where the element in **greater than or equal 
 - To determin the lowest possible index to insert the element in the sorted array.
 - find the index of the first element that is greater than or equal to the target
 - `arr[mid] >= target`
-- here we are finding the possibility, so we wont stop the loop until the serach space is empty
+- here we are finding the possibility, so we wont stop the loop until the search space is empty
 
 ```js
 console.log(findLowerBound([3, 5, 8, 15, 19], 8)); // 2

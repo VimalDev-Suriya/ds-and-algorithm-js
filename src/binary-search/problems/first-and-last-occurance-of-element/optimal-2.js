@@ -15,7 +15,7 @@ const first = (arr, target) => {
       // Here I am moving to the left, because I am planned to determine the first occuarnce
       // the first occuarnace will be at the left of the mid
       first = mid;
-      end = mid - 1;
+      end = mid - 1; // The first occuarnce will always be in lower side, so we are doing mid - 1
     } else if (arr[mid] > target) {
       end = mid - 1;
     } else {
@@ -41,7 +41,7 @@ const last = (arr, target) => {
       // Here I am moving to the right, because I am planned to determine the last occuarnce
       // the last occuarnace will be at the right of the mid
       last = mid;
-      start = mid + 1;
+      start = mid + 1; // The last occuarnce will always be in higher side, so we are doing mid + 1
     } else if (arr[mid] > target) {
       end = mid - 1;
     } else {

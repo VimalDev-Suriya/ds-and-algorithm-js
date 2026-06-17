@@ -31,13 +31,16 @@ const squareRoot = (num) => {
 
     if (sq <= num) {
       sqrt = mid;
+      // why start = mid + 1? why not end = mid -1 ?
+      // Because, we know that the range of the sqrt numbers will 1 to given-num
+      // sqrt is the something similar to floor, finding the lowest possible given range number / index
       start = mid + 1;
     } else {
       end = mid - 1;
     }
   }
 
-  // AFter the loop ends,
+  // After the loop ends,
   // the start always points to the first element greater than the num.
   // the end always points to the sqrt of that element [final answer] - We can also return ends if it is required, instead of maintaining another variable.
 
